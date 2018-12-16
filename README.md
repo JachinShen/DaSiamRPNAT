@@ -1,5 +1,13 @@
 # DaSiamRPNAT
 
+## Prerequisities
+
+- python3
+- pytorch
+- numpy
+- opencv
+- matlab
+
 ## Data Preparation
 
 ### download OTB dataset
@@ -23,6 +31,10 @@ python pre_data_otb.py
 ```
 
 Then, a file named `vot-otb.pkl` will appear in the folder `data`. It contains the image file path and ground truth.
+
+## Pretrained model
+
+SiamRPNBIG.model: https://drive.google.com/file/d/1-vNVZxfbIplXHrqMHiJJYWXYWsOIvGsf/view?usp=sharing
 
 ## run
 
@@ -48,4 +60,10 @@ python generate_mat.py
 
 In the folder `otb-toolkit`, run matlab. Then, run `run_OPE` in matlab.
 
-##
+## Reference
+
+- DaSiamRPN: https://github.com/foolwood/DaSiamRPN
+- benchmark results: https://github.com/foolwood/benchmark_results
+- DAT: https://github.com/shipubupt/NIPS2018
+- otb-toolkit: https://github.com/ZhouYzzz/otb-toolkit
+- SiamRPN: https://github.com/zkisthebest/Siamese-RPN
