@@ -27,6 +27,7 @@ cd dataset
 ### collect image path and ground truth
 
 ```
+cd scripts
 python pre_data_otb.py
 ```
 
