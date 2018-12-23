@@ -22,7 +22,7 @@ register('trackers', struct('name','SAMF','namePaper','SAMF'));
 % 'mainFunc': the main entrance of your tracker subject to the protocol of OTB
 % 'setupFunc': the function to initialize the environment
 register('trackers', struct('name','DaSiamRPN','namePaper','DaSiamRPN'));
-register('trackers', struct('name','DaSiamRPNAT','namePaper','DaSiamRPNAT'));
+register('trackers', struct('name','DaSiamRPNOTB','namePaper','DaSiamRPNOTB'));
 %register('trackers', struct('name','ECO','namePaper','ECO','mainFunc','OTB_DEEP_settings','setupFunc','setup_paths'));
 %register('trackers', struct('name','ECO-HC','namePaper','ECO','mainFunc','OTB_HC_settings','setupFunc','setup_paths'));
 
