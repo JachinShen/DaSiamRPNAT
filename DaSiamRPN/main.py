@@ -18,7 +18,7 @@ import torch
 import cv2  # imread
 import sys
 
-print("Start SiamRPN")
+print("Start DaSiamRPN")
 
 # load net
 net_file = "../model/SiamRPNBIG.model"
@@ -68,4 +68,4 @@ for k, (seqname, seq) in enumerate(data.items()):
 
     # store results
     res_dict[seqname] = rect_list
-    json.dump(res_dict, open("results/DaSiamRPN.json", 'w'), indent=2)
+    json.dump(res_dict, open("../results/DaSiamRPN.json", 'w'), indent=2)

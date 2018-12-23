@@ -1,6 +1,7 @@
 # DaSiamRPN
 # Licensed under The MIT License
 # Written by Qiang Wang (wangqiang2015 at ia.ac.cn)
+# Modified by Jachin Shen (jachinshen@foxmail.com)
 # --------------------------------------------------------
 import torch
 import torch.nn as nn
@@ -63,35 +64,13 @@ class SiamRPNBIG(nn.Module):
         cls1_kernel = Variable(self.cls1_kernel.data, requires_grad=True)
         self.optimizer = torch.optim.Adam([
             {"params":self.conv_cls2.parameters()},
-            #{"params":self.localization.parameters()}
             {"params":cls1_kernel}
-            #{"params": self.parameters()}
         ], lr = 0.000001)
         
         for i in range(10):
             score = F.conv2d(self.conv_cls2(x_f), cls1_kernel)
             score = F.softmax(score)
             at = label * score
-            '''
-            if i == 0 or i == 14:
-                for j in range(5):
-                    plt.grid(False)
-                    plt.title("background origin")
-                    plt.imshow(score.detach().cpu().numpy()[0][j], cmap="rainbow")
-                    plt.show()
-                    plt.grid(False)
-                    plt.title("background attention")
-                    plt.imshow(at.detach().cpu().numpy()[0][j], cmap="rainbow")
-                    plt.show()
-                    plt.grid(False)
-                    plt.title("target origin")
-                    plt.imshow(score.detach().cpu().numpy()[0][j+5], cmap="rainbow")
-                    plt.show()
-                    plt.grid(False)
-                    plt.title("target attention")
-                    plt.imshow(at.detach().cpu().numpy()[0][j+5], cmap="rainbow")
-                    plt.show()
-            '''
             self.zero_grad()
             loss = torch.nn.MSELoss()(score, at)
             print(loss)
@@ -104,35 +83,13 @@ class SiamRPNBIG(nn.Module):
         cls1_kernel = Variable(self.cls1_kernel.data, requires_grad=True)
         self.optimizer = torch.optim.Adam([
             {"params":self.conv_cls2.parameters()},
-            #{"params":self.localization.parameters()}
             {"params":cls1_kernel}
-            #{"params": self.parameters()}
         ], lr = 0.000001)
         
         for i in range(10):
             score = F.conv2d(self.conv_cls2(x_f), cls1_kernel)
             score = F.softmax(score)
             at = label * score
-            '''
-            if i == 0 or i == 14:
-                for j in range(5):
-                    plt.grid(False)
-                    plt.title("background origin")
-                    plt.imshow(score.detach().cpu().numpy()[0][j], cmap="rainbow")
-                    plt.show()
-                    plt.grid(False)
-                    plt.title("background attention")
-                    plt.imshow(at.detach().cpu().numpy()[0][j], cmap="rainbow")
-                    plt.show()
-                    plt.grid(False)
-                    plt.title("target origin")
-                    plt.imshow(score.detach().cpu().numpy()[0][j+5], cmap="rainbow")
-                    plt.show()
-                    plt.grid(False)
-                    plt.title("target attention")
-                    plt.imshow(at.detach().cpu().numpy()[0][j+5], cmap="rainbow")
-                    plt.show()
-            '''
             self.zero_grad()
             loss = torch.nn.MSELoss()(score, at)
             print(loss)
@@ -140,13 +97,3 @@ class SiamRPNBIG(nn.Module):
             self.optimizer.step()
          
         self.cls1_kernel = cls1_kernel
-    def my_template(self, z):
-        z_f = self.featureExtract(z)
-        self.z_f = z_f
-        
-    def my_score(self, x):
-        with torch.no_grad():
-            x_f = self.featureExtract(x)
-            score = F.conv2d(x_f, self.z_f)
-        return score
-
