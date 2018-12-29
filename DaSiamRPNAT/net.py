@@ -86,7 +86,7 @@ class SiamRPNBIG(nn.Module):
             {"params":cls1_kernel}
         ], lr = 0.000001)
         
-        for i in range(10):
+        for i in range(1):
             score = F.conv2d(self.conv_cls2(x_f), cls1_kernel)
             score = F.softmax(score)
             at = label * score

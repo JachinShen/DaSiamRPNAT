@@ -39,22 +39,29 @@ SiamRPNBIG.model: https://drive.google.com/file/d/1-vNVZxfbIplXHrqMHiJJYWXYWsOIv
 
 ## run
 
+### Baseline: DaSiamRPN
 ```
-cd code
+cd DaSiamRPN
 python main.py
 ```
 
-Then, a file named `DaSiamRPNAT.json` will appear. It records the results.
+Then, a file named `DaSiamRPN.json` will appear in the folder `results`. It records the results.
 
-And some pictures will appear in folder `figure` to show the results.
+### DaSiamRPNAT
+```
+cd DaSiamRPNAT
+python main.py
+```
+
+Then, a file named `DaSiamRPNAT.json` will appear in the folder `results`.
 
 ## benchmark
 
 ### convert json to mat
 
 ```
-cd code
-python generate_mat.py
+cd scripts
+python generate_mat.py -i ../results/DaSiamRPN.json -n DaSiamRPN
 ```
 
 ### run benchmark

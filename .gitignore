@@ -1,1 +1,3 @@
 otb-toolkit/cache
+*.model
+__pycache__

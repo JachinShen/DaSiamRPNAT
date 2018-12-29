@@ -1,0 +1,46 @@
+function trackers = config_trackers
+
+% Register state-of-the-art trackers
+% register('trackers', struct('name','MDNet','namePaper','MDNet'));
+% register('trackers', struct('name','CCOT','namePaper','CCOT'));
+register('trackers', struct('name','SRDCFdecon','namePaper','SRDCFdecon'));
+register('trackers', struct('name','HDT','namePaper','HDT'));
+register('trackers', struct('name','Staple','namePaper','Staple'));
+register('trackers', struct('name','SRDCF','namePaper','SRDCF'));
+register('trackers', struct('name','DeepSRDCF','namePaper','DeepSRDCF'));
+register('trackers', struct('name','CNN-SVM','namePaper','CNN-SVM'));
+register('trackers', struct('name','CF2','namePaper','CF2'));
+register('trackers', struct('name','LCT','namePaper','LCT'));
+register('trackers', struct('name','DSST','namePaper','DSST'));
+register('trackers', struct('name','MEEM','namePaper','MEEM'));
+register('trackers', struct('name','KCF','namePaper','KCF'));
+register('trackers', struct('name','SAMF','namePaper','SAMF'));
+
+% Register local trackers
+% 'name': the identifier of the tracker
+% 'namePaper': the name of tracker's repository, you can put multiple verisons of tracker in a single repository
+% 'mainFunc': the main entrance of your tracker subject to the protocol of OTB
+% 'setupFunc': the function to initialize the environment
+register('trackers', struct('name','DaSiamRPN','namePaper','DaSiamRPN'));
+register('trackers', struct('name','DaSiamRPNAT','namePaper','DaSiamRPNAT'));
+%register('trackers', struct('name','DaSiamRPNAT2','namePaper','DaSiamRPNAT2'));
+%register('trackers', struct('name','DaSiamRPNAT3','namePaper','DaSiamRPNAT3'));
+%register('trackers', struct('name','DaSiamRPNAT4','namePaper','DaSiamRPNAT4'));
+%register('trackers', struct('name','DaSiamRPNAT5','namePaper','DaSiamRPNAT5'));
+%register('trackers', struct('name','DaSiamRPNAT10','namePaper','DaSiamRPNAT10'));
+register('trackers', struct('name','DaSiamRPNAT2','namePaper','DaSiamRPNAT2'));
+%register('trackers', struct('name','DaSiamRPNAT12','namePaper','DaSiamRPNAT12'));
+%register('trackers', struct('name','DaSiamRPNAT13','namePaper','DaSiamRPNAT13'));
+%register('trackers', struct('name','DaSiamRPNAT14','namePaper','DaSiamRPNAT14'));
+%register('trackers', struct('name','DaSiamRPNAT15','namePaper','DaSiamRPNAT15'));
+%register('trackers', struct('name','DaSiamRPNAT16','namePaper','DaSiamRPNAT16'));
+%register('trackers', struct('name','DaSiamRPNAT17','namePaper','DaSiamRPNAT17'));
+%register('trackers', struct('name','DaSiamRPNAT18','namePaper','DaSiamRPNAT18'));
+%register('trackers', struct('name','DaSiamRPNAT19','namePaper','DaSiamRPNAT19'));
+%register('trackers', struct('name','DaSiamRPNOTB','namePaper','DaSiamRPNOTB'));
+%register('trackers', struct('name','ECO','namePaper','ECO','mainFunc','OTB_DEEP_settings','setupFunc','setup_paths'));
+%register('trackers', struct('name','ECO-HC','namePaper','ECO','mainFunc','OTB_HC_settings','setupFunc','setup_paths'));
+
+trackers = register('trackers');
+register('trackers', 'clear');
+end
