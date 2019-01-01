@@ -19,7 +19,7 @@ import cv2  # imread
 import sys
 import time
 
-print("Start DaSiamRPN")
+print("Start DaSiamRPNAT")
 
 # load net
 net_file = "../model/SiamRPNBIG.model"
@@ -73,7 +73,7 @@ for k, (seqname, seq) in enumerate(data.items()):
         overlap.append(overlap_ratio(res, gt[i]))
 
     # store results
-    print("fps: {.2f}".format(len(gt)/toc))
+    print("fps: {}".format(len(gt)/toc))
     res_dict[seqname] = rect_list
     res_dict[seqname+"time"] = [toc, len(gt), len(gt)/toc]
     json.dump(res_dict, open("../results/DaSiamRPNAT.json", 'w'), indent=2)

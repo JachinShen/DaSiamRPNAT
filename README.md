@@ -55,6 +55,14 @@ python main.py
 
 Then, a file named `DaSiamRPNAT.json` will appear in the folder `results`.
 
+### DaSiamRPNAT2
+```
+cd DaSiamRPNAT2
+python main.py
+```
+
+Then, a file named `DaSiamRPNAT2.json` will appear in the folder `results`.
+
 ## benchmark
 
 ### convert json to mat
@@ -62,11 +70,26 @@ Then, a file named `DaSiamRPNAT.json` will appear in the folder `results`.
 ```
 cd scripts
 python generate_mat.py -i ../results/DaSiamRPN.json -n DaSiamRPN
+python generate_mat.py -i ../results/DaSiamRPNAT.json -n DaSiamRPNAT
+python generate_mat.py -i ../results/DaSiamRPNAT2.json -n DaSiamRPNAT2
 ```
 
 ### run benchmark
 
 In the folder `otb-toolkit`, run matlab. Then, run `run_OPE` in matlab.
+```
+cd otb-toolkit
+matlab
+```
+
+In matlab:
+```
+>> run_OPE
+```
+
+A plot will appear.
+
+![](./OTB_OPE_plot.png)
 
 ## Reference
 
