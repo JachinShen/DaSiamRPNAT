@@ -12,7 +12,7 @@ from os.path import realpath, dirname, join
 import os
 import pickle
 import json
-import matplotlib.pyplot as plt
+#import matplotlib.pyplot as plt
 import numpy as np
 import torch
 import cv2  # imread

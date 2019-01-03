@@ -16,10 +16,21 @@ data = {}
 for i,seq in enumerate(seq_list):
     print(seq)
     img_list = sorted(["img/"+p for p in os.listdir(seq_home+seq+"/img") if os.path.splitext(p)[1] == '.jpg'])
-    try:
-        gt = np.loadtxt(seq_home+seq+'/groundtruth_rect.txt',delimiter=',')
-    except:
-        gt = np.loadtxt(seq_home+seq+'/groundtruth_rect.txt')
+    if seq == "Human4":
+        try:
+            gt = np.loadtxt(seq_home+seq+'/groundtruth_rect.2.txt',delimiter=',')
+        except:
+            gt = np.loadtxt(seq_home+seq+'/groundtruth_rect.2.txt')
+    elif seq == "Skating2" or seq == "Jogging":
+        try:
+            gt = np.loadtxt(seq_home+seq+'/groundtruth_rect.1.txt',delimiter=',')
+        except:
+            gt = np.loadtxt(seq_home+seq+'/groundtruth_rect.1.txt')
+    else:
+        try:
+            gt = np.loadtxt(seq_home+seq+'/groundtruth_rect.txt',delimiter=',')
+        except:
+            gt = np.loadtxt(seq_home+seq+'/groundtruth_rect.txt')
         
 
     if seq == "David":
